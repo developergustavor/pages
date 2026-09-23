@@ -3,26 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>developergustavor</title>
+  <title>developergustavor — Páginas</title>
+  <meta name="description" content="Índice das páginas publicadas via GitHub Pages.">
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #f1f5f9;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      color: #f1f5f9;
-      text-align: center;
+      padding: 3rem 1.25rem 4rem;
     }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    p { color: #94a3b8; font-size: 1.1rem; }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+    h1 { font-size: 2.5rem; margin: 0 0 0.5rem; }
+    header p { color: #94a3b8; font-size: 1.1rem; margin: 0; }
+    main {
+      width: 100%;
+      max-width: 960px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #0f172a;
+      display: block;
+    }
+    .card-body { padding: 1.15rem 1.25rem 1.35rem; }
+    .card-title { font-size: 1.15rem; font-weight: 600; margin: 0 0 0.4rem; }
+    .card-desc { color: #94a3b8; font-size: 0.92rem; line-height: 1.45; margin: 0 0 0.9rem; }
+    .card-cta { color: #38bdf8; font-size: 0.9rem; font-weight: 600; }
+    footer { margin-top: 3rem; color: #64748b; font-size: 0.85rem; text-align: center; }
+    footer a { color: #94a3b8; }
   </style>
 </head>
 <body>
-  <h1>Olá 👋</h1>
-  <p>Essas são minhas páginas do GitHub Pages.</p>
+  <header>
+    <h1>Olá 👋</h1>
+    <p>Essas são minhas páginas publicadas via GitHub Pages.</p>
+  </header>
+
+  <main>
+    <!--
+      NAVEGAÇÃO DAS SUBPAGES — mantenha esta lista em sincronia com as subpastas do repositório.
+      Regra (ver .claude/CLAUDE.md): a cada subpasta com index.html adicionada/removida/renomeada,
+      atualize os cards abaixo para refletir o roteamento correto e completo.
+    -->
+    <div class="grid">
+      <a class="card" href="andre-chaveiro-24h-recife/">
+        <img src="andre-chaveiro-24h-recife/assets/capa-rede-social.png" alt="André Chaveiro 24h Recife" loading="lazy">
+        <div class="card-body">
+          <p class="card-title">André Chaveiro 24h — Recife</p>
+          <p class="card-desc">Chaveiro 24 horas em Recife e região. Residencial, automotivo e fechadura eletrônica, chegada em até 20 minutos.</p>
+          <span class="card-cta">Abrir página →</span>
+        </div>
+      </a>
+
+      <a class="card" href="lc-chaveiro-24h-recife/">
+        <img src="lc-chaveiro-24h-recife/assets/capa-rede-social.png" alt="LC Chaveiro 24h Recife" loading="lazy">
+        <div class="card-body">
+          <p class="card-title">LC Chaveiro 24h — Recife</p>
+          <p class="card-desc">Chaveiro 24 horas em Recife, Olinda, Jaboatão e Camaragibe. Casas, carros e cofres, chave codificada e cópias.</p>
+          <span class="card-cta">Abrir página →</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Publicado com GitHub Pages · <a href="https://github.com/developergustavor/pages">código-fonte</a></p>
+  </footer>
 </body>
 </html>
